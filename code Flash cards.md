@@ -293,4 +293,29 @@ With out filter
 
 
 
----------------------------------------------
+# what the output of the code
+
+```javascript
+var arr=[10,20, 30, 40];
+
+for(var i=0;i<arr.length;i++){
+  setTimeout(function(){
+    console.log(i);
+  },3000);
+}
+
+// output:4
+```
+
+```javascript
+var arr=[10,20, 30, 40];
+
+for(let i=0;i<arr.length;i++){
+  setTimeout(function(){
+    console.log(i);
+  },3000);
+}
+
+// output:0,1,2,3
+```
+
