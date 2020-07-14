@@ -6,7 +6,7 @@ Find the largest number in an array
   var large=array[0];
   for( let n of array){
   if(array[n]>large){
-  large=arra[n]}
+  large=array[n]}
   }
   console.log(large)}
 ```
@@ -122,7 +122,7 @@ return(rChar)
 ### Creating a char map:
 
 --------------------------------------
- 
+
 
 ```javascript
  function createCharMap(text) {
@@ -175,7 +175,7 @@ Burtt force
 Using chaMaps
 
 ---------------------------------------------------
- 
+
 
 ```javascript
  function createCharMap(text) {
@@ -231,7 +231,7 @@ Using chaMaps
 ### Removing the duplicates elements in an array
 
 --------------------------------------------------------------------
- 
+
 
 ```javascript
  Var array=[1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
@@ -293,7 +293,7 @@ With out filter
 
 
 
-# what the output of the code
+### what the output of the code
 
 ```javascript
 var arr=[10,20, 30, 40];
@@ -319,3 +319,29 @@ for(let i=0;i<arr.length;i++){
 // output:0,1,2,3
 ```
 
+### write  a function that  takes 2 inputs - A String and  an integer flags( value can be 0 or 1)   if  the flag value is '0' then  the function should return  all the characters at even position  and if  flag value is '1  the function should return  all the characters at odd position  
+
+```javascript
+function remove(str, num) {
+  var output = "";
+  if (num === 1) {
+    for (i = 0; i < str.length; i++) {
+      if (parseInt(i) % 2 !== 0) {
+        output = output + str[i];
+      }
+    }
+  }
+  if (num == 0) {
+    for (i = 0; i < str.length; i++) {
+      if (parseInt(i) % 2 == 0) {
+        output = output + str[i];
+      }
+    }
+  }
+  return output;
+}
+
+console.log(remove("TRACXN", 0));
+```
+
+s
