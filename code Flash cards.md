@@ -344,4 +344,109 @@ function remove(str, num) {
 console.log(remove("TRACXN", 0));
 ```
 
-s
+###  flatten an array 
+
+```javascript
+var arr1 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+
+
+function flatArray(arr) {
+  const flat = [];
+  
+  arr.forEach(i => {
+    if(Array.isArray(i)) {
+      flat.push(...flatArray(i));
+    } else {
+      flat.push(i);
+    }
+  });
+  
+  return flat;
+}
+
+ 
+console.log(flatArray(arr));
+```
+
+### Total Score
+
+```javascript
+Question 1 :
+
+get the total score of force users only
+
+
+var personnel = [
+{
+id: 5,
+name: "Luke Skywalker",
+pilotingScore: 98,
+shootingScore: 56,
+isForceUser: true,
+},
+{
+id: 82,
+name: "Sabine Wren",
+pilotingScore: 73,
+shootingScore: 99,
+isForceUser: false,
+},
+{
+id: 22,
+name: "Zeb Orellios",
+pilotingScore: 20,
+shootingScore: 59,
+isForceUser: false,
+},
+{
+id: 15,
+name: "Ezra Bridger",
+pilotingScore: 43,
+shootingScore: 67,
+isForceUser: true,
+},
+{
+id: 11,
+name: "Caleb Dume",
+pilotingScore: 71,
+shootingScore: 85,
+isForceUser: true,
+},
+];
+const calculateTotal = (persons) => {
+  
+  return persons
+    .filter(person => person.isForceUser)
+    .map(person => person.pilotingScore + person.shootingScore)
+    .reduce((previous, current) => {
+      return previous + current;
+    });
+  
+};
+
+
+console.log(calculateTotal(personnel));
+
+
+
+```
+
+### Write a "mul" function which will properly when invoked as below syntax. 
+
+console.log(mul(2)(3)(4)); // output : 24
+console.log(mul(4)(3)(4)); // output : 48
+
+```javascript
+const mul = (a) => {
+  return (b) => {
+    return (c) => {
+      return a * b * c;
+    }
+  }
+}
+
+
+console.log(mul(2)(3)(4));
+console.log(mul(4)(3)(4));
+```
+
