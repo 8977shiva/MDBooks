@@ -59,7 +59,8 @@ jQuery(document).ready(function( $ ) {
 ### Selecting Elements by ID
 
 ```js
-$( "#myId" ); 
+$( "#myId" ); //retun []
+$("#myId").html();
 ```
 
 ### Selecting Elements by Class Name
@@ -224,12 +225,16 @@ $('h1').removeClass("highlight")
 
 ```javascript
 $( "p" ).click(function() {
-  $( this ).toggleClass( "highlight" );
+  $( "p" ).toggleClass( "highlight" );
 });
 
 ```
 
 4 hasClass
+
+```
+$(h1).hasClass(highlight) //true 
+```
 
 ​	Checks  if the given class is present or not
 
@@ -286,7 +291,7 @@ Returns a value's index in an array, or -1 if the value is not in the array:
 ```javascript
 var myArray = [ 1, 2, 3, 5 ];
 
-if ( $.inArray( 4, myArray ) !== -1 ) {
+if ( $.inArray( 5, myArray ) !== -1 ) {
     console.log( "found it!" );
 }
 ```
@@ -317,4 +322,160 @@ var newObject = $.extend( {}, firstObject, secondObject );
 console.log( firstObject.foo ); // "bar"
 console.log( newObject.foo ); // "baz"
 ```
+
+## Events
+
+jQuery offers convenience methods for most native browser events. These methods — including `.click()`, `.focus()`, `.blur()`, `.change()`, etc. — are shorthand for jQuery's `.on()` method. The on method is useful for binding the same handler function to multiple events, when you want to provide data to the event handler, when you are working with custom events, or when you want to pass an object of multiple events and handlers.
+
+```javascript
+$(document).ready(() => {
+  $("#firstName").change(() => {
+    console.log($("#firstName").val());
+  });
+});
+
+// on
+$(document).ready(() => {
+  // $('div#form').on('mouseenter', function (e) {
+  //      $(this).toggleClass('highlight')
+
+  //   })
+  $("div #form").on({
+    mouseenter: function () {
+      console.log("hovered over a div");
+    },
+    mouseleave: function () {
+      console.log("mouse left a div");
+    },
+    click: function () {
+      console.log("clicked on a div");
+    },
+  });
+});
+```
+
+## Effects
+
+these are similar to css Animations
+
+### FadeOut
+
+Add the css display  to none
+
+slow, normal, fast minsec
+
+```javascript
+  $("#btnFadeOut").click(() => {
+    $("#box").fadeOut(3000);
+  });
+```
+
+
+
+### FadeIn
+
+Removes the css display:none if any element has it 
+
+```javascript
+ $("#btnFadeIn").click(() => {
+    $("#box").fadeIn(3000);
+  });
+```
+
+
+
+### FadeToggle
+
+Toggle between  FadeIn and fadeOut 
+
+```javascript
+$("#btnFadeTog").click(() => {
+    // alert("clicked");
+    $("#box").fadeToggle();
+  });
+```
+
+### Slide Up
+
+it is  similar to fadeout but it move upwards
+
+```javascript
+ $("#btnSlideUp").click(() => {
+    // alert("clicked");
+    $("#box").slideUp();
+  });
+```
+
+
+
+### Slide Down
+
+```javascript
+ $("#btnSlideDown").click(() => {
+    // alert("clicked");
+    $("#box").slideDown();
+  });
+```
+
+
+
+### Slide Toggle
+
+```javascript
+ $("#btnSlideTog").click(() => {
+    // alert("clicked");
+    $("#box").slideToggle(3000);
+  });
+```
+
+### Stop
+
+it will stop  the on going animations 
+
+```javascript
+$("#btnStop").click(() => {
+    // alert("clicked");
+    $("#box").stop();
+  });
+```
+
+
+
+### Animate
+
+positions in css
+
+```css
+div{
+position:fixed;  the element will be fixed even when we scroll
+position:relative
+    top;
+    left
+    right
+    bottom
+ position:absloute;  
+}
+```
+
+
+
+this is similar to position. The  height , width should be in string 
+
+```
+
+```
+
+
+
+## Ajax
+
+http call  get post load getjson
+
+### load
+
+```)
+$.load(url/filename, callback)
+```
+
+
 
