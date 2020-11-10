@@ -284,7 +284,7 @@ $.each({ foo: "bar", baz: "bim" }, function( k, v ) {
 
 The method .each() can be called on a selection to iterate over the elements contained in the selection. .each(), not $.each(), should be used for iterating over elements in a selection.
 
-### $.inArray()
+### $.inArray()// isArray()
 
 Returns a value's index in an array, or -1 if the value is not in the array:
 
@@ -462,12 +462,14 @@ position:relative
 this is similar to position. The  height , width should be in string 
 
 ```
-
+$("").animate({
+	left:500
+})
 ```
 
 
 
-## Ajax
+## HTTP Request
 
 http call  get post load getjson
 
@@ -475,7 +477,76 @@ http call  get post load getjson
 
 ```)
 $.load(url/filename, callback)
+ 
+$("taraget).load( respone,status,xhr)=>
+{
+if(status==="success"){
+ console.log("sucess");
+}else if(status==="error"){
+	console.log(xhr.statustext)
+}
+ })
+ 
+ 
+ 
 ```
+
+
+
+## get
+
+```
+$.get("test.html",(data)=>{
+$("#traget").html(data)
+})
+//getjson
+$.getJSON("filename/url",(data)=>{
+$.each(data,(idx, val)=>{
+	$(ul).append("<li>"+val.name+"</li>")
+})
+})
+```
+
+## Post
+
+```
+$("#form").submit((e)=>{
+e.preventDefault();
+let title=$("#title").val();
+let body=$("#body").val();
+let url=$(this).attr("actions");
+
+ $.post(url,{title:title, body:body}).done((data)=>{
+    console.log("post saved");
+    console.log(data)
+ }).fail((xhr,status)=>{
+ alert("eror")
+ console.log(xhr.statusText)
+ })
+
+
+})
+```
+
+
+
+
+
+### ajax
+
+```
+$.ajax({
+method:"GET",
+url:
+datatype:"json",
+}).done((data)=>{
+$.each(data,(idx, val)=>{
+	$(ul).append("<li>"+val.name+"</li>")
+})
+})
+```
+
+
 
 
 

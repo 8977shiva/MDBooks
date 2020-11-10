@@ -1,3 +1,23 @@
+### intro 
+
+MERN stack
+70% - front end
+30% backend
+ReactJS, JSX, ES6
+React 16, React hooks
+Babel - transpiler
+Webpack - bundling
+Fetch API - to make calls to server
+Redux - state management
+Redux middleware like redux thunk
+Experience with HTML5, CSS3, Bootstrap, SASS
+
+Backend
+NodeJS, ExpressJS, MongoDB
+
+CI/CD
+Jenkins, Git, Docker
+
 ### LifeCyle methods
 
 ####  Mounting
