@@ -127,3 +127,80 @@ $bannerHeading:46px;
 
 ```
 
+
+
+
+
+## Pseudo Classes
+
+in normal CSS we  would use 
+
+```scss
+#main-nav a:hover{
+  background:#333;
+}
+&:hover{
+background:#333;
+}
+// move  the  clearfix to    ul &
+```
+
+
+
+
+
+## Math ope
+
+ in use  +,- ,/,
+
+```scss
+li{
+ width:(100/6)
+}
+
+
+#services{
+ margin-bootm:60px;
+ li{
+	float:left;
+	box-align:border-box;
+	text-align:center;
+	width:(100%/3);
+}
+img{
+	width:60%;
+    margin:20px 20px;
+}
+    a{
+	   text-decoration:none;
+        color:$deepBlue;
+        font-weight:bold;
+        &:hover{
+            color:red;
+        }
+}
+    ul{
+        
+    }
+}
+```
+
+   
+
+grid using math
+
+in mixins
+
+```
+@mixins grid($cols,$mgn){
+	float:left
+	margin-right:$mgn;
+	margin-bottom:$mgn;
+	width:((100%-(($cols-1)*$mgn))/$cols);
+	&:nth-child({$cols}n){
+		margin-right:0;
+}
+	
+}
+```
+
