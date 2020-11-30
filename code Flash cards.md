@@ -1,3 +1,5 @@
+
+
 Find the largest number in an array
 
 -------------------------
@@ -8,7 +10,20 @@ Find the largest number in an array
   if(array[n]>large){
   large=array[n]}
   }
-  console.log(large)}
+  console.log(large)
+```
+
+Second largest number 
+
+```javascript
+let arr =[20,10,9];
+
+let res = arr.sort((a,b)=>b-a)[1];
+console.log(res)
+let arr =[20,10,9,10];
+
+let res =[...new Set( arr.sort((a,b)=>b-a))][1];
+console.log(res)
 ```
 
 
